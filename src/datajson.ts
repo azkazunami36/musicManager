@@ -36,8 +36,6 @@ export interface BaseMusic {
     /** 曲のタイトルです。 */
     title: string;
     /** 曲の作成者です。UUIDで入力します。 */
-    author: string[];
-    /** 曲のアーティストです。UUIDで入力します。 */
     artist: string[];
     /** アーティストの声優です。UUIDで入力します。 */
     charactervoice: string[];

@@ -160,3 +160,24 @@ body {
         color: white;
     }
 }
+#albumsettingWindow {
+    .body {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        color: white;
+    }
+}
+#artistsettingWindow {
+    .body {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        color: white;
+    }
+}
+#musicsettingWindow {
+    .body {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        color: white;
+    }
+}
