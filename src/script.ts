@@ -89,6 +89,17 @@ addEventListener("load", async () => {
             }
         }
     };
+    const metadataEditer = new class metadataEditer {
+        constructor() {
+            const file = document.getElementById("filesettingWindow");
+            const album = document.getElementById("albumsettingWindow");
+            const artist = document.getElementById("artistsettingWindow");
+            const music = document.getElementById("musicsettingWindow");
+            if (file && album && artist && music) {
+                
+            }
+        }
+    };
     (function test() {
     })();
 });
