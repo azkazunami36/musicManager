@@ -1,0 +1,162 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+#header {
+    width: 100%;
+    height: 60px;
+    background: rgb(254, 255, 237);
+}
+
+#header,
+#header .left,
+#header .center,
+#header .right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header .left,
+#header .center,
+#header .right {
+    width: 33%;
+    height: 100%;
+}
+
+#header .left {
+    justify-content: flex-start;
+}
+
+#header .center {
+    min-width: 400px;
+}
+
+#header .right {
+    justify-content: flex-end;
+}
+
+.headerButtonType1 {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+#sideBarViewButton {
+    background: rgb(0, 92, 252);
+    margin: 10px;
+}
+
+#playNowStatus {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#playNowStatus .top,
+#playNowStatus .bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#playNowStatus .top {
+    height: 35px;
+    align-items: center;
+}
+
+#playNowStatus .bottom {
+    height: 25px;
+    font-size: 13px;
+}
+
+#playNowStatus .p {
+    display: inline;
+}
+
+#body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: calc(100% - 60px);
+}
+
+#sideBar {
+    min-width: 300px;
+    max-width: 300px;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 236, 236);
+}
+
+#mainView {
+    width: 100%;
+    height: 100%;
+    background: rgb(236, 252, 255);
+}
+
+#mainView .viewed {
+    display: flex;
+}
+
+.sideBarButton {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 285px;
+    height: 40px;
+    background: rgb(255, 255, 255);
+    margin: 7.5px;
+    border-radius: 10px;
+}
+
+.sideBarButton p {
+    margin-left: 10px;
+}
+
+.mainViewinContent {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#artistWindow {}
+
+#albumWindow {}
+
+#musicWindow {}
+
+#genreWindow {}
+
+#uploadWindow {
+    input {
+        margin: 10px 0;
+    }
+
+    .upload {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 150px;
+        height: 40px;
+        border-radius: 25px;
+        background: rgb(161, 211, 255);
+    }
+}
+#filesettingWindow {
+    .body {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        color: white;
+    }
+}
