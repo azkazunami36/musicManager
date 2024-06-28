@@ -5,6 +5,7 @@
     background: linear-gradient(15deg, rgb(0, 70, 190), rgb(10, 98, 250));
     padding: 10px;
     margin-bottom: 10px;
+
     .top {
         display: flex;
 
@@ -54,15 +55,15 @@
                         background: white;
                         border-radius: 5px;
                         overflow: hidden;
+                    }
 
-                        input {
-                            width: 100%;
-                            height: 100%;
-                            padding: 0;
-                            margin: 0;
-                            border: 0;
-                            outline: 0;
-                        }
+                    input {
+                        width: calc(100% - 10px);
+                        height: 100%;
+                        padding: 0 5px;
+                        margin: 0;
+                        border: 0;
+                        outline: 0;
                     }
 
                     .textboxs {
@@ -88,15 +89,6 @@
                                 background: white;
                                 border-radius: 5px;
                                 overflow: hidden;
-
-                                input {
-                                    width: 100%;
-                                    height: 100%;
-                                    padding: 0;
-                                    margin: 0;
-                                    border: 0;
-                                    outline: 0;
-                                }
                             }
                         }
 
@@ -113,10 +105,14 @@
     }
 
     .bottom {
-        p.text {
+        div.text {
             margin: 0;
             font-size: 10px;
             color: rgb(182, 182, 182);
+
+            div#UUID {
+                display: inline;
+            }
         }
 
         .buttons {

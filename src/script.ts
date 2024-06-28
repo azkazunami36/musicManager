@@ -59,7 +59,7 @@ addEventListener("load", async () => {
                         const name = file.files[0].name;
                         const filereader = new FileReader();
                         filereader.readAsArrayBuffer(file.files[0].slice());
-                        filereader.onloadend = async  () => {
+                        filereader.onloadend = async () => {
                             if (filereader.result) {
                                 if (typeof filereader.result !== "string") {
                                     const unit8array = new Uint8Array(filereader.result);
@@ -90,14 +90,91 @@ addEventListener("load", async () => {
         }
     };
     const metadataEditer = new class metadataEditer {
+        propertys: { [n: string]: { [n: string]: HTMLInputElement } } = {
+            file: {},
+            album: {},
+            artist: {},
+            music: {}
+        }
         constructor() {
             const file = document.getElementById("filesettingWindow");
             const album = document.getElementById("albumsettingWindow");
             const artist = document.getElementById("artistsettingWindow");
             const music = document.getElementById("musicsettingWindow");
-            if (file && album && artist && music) {
-                
+            function defaultSelecter(element: HTMLElement) {
+                const array: Element[] = []
+                for (let i = 0; i !== 2; i++) {
+                    const text = ["div.textbox"];
+                    element.querySelectorAll(
+                        "div.body div.PropertyWindow1 div.right div.propertyBase div.property " + text[i] + " input"
+                    ).forEach(element => array.push(element));
+                }
+                return array;
+            };
+            if (file) {
+                const property = defaultSelecter(file);
+                property.forEach(e => { this.propertys.file[e.id] = e as HTMLInputElement; });
             }
+            if (album) {
+                const property = defaultSelecter(album);
+                property.forEach(e => { this.propertys.album[e.id] = e as HTMLInputElement; });
+            }
+            if (artist) {
+                const property = defaultSelecter(artist);
+                property.forEach(e => { this.propertys.artist[e.id] = e as HTMLInputElement; });
+            }
+            if (music) {
+                const property = defaultSelecter(music);
+                property.forEach(e => { this.propertys.music[e.id] = e as HTMLInputElement; });
+            }
+            console.log(this.propertys);
+        }
+        propertyLoad(type: "file" | "album" | "artist" | "music", UUID: string) {
+            switch (type) {
+                case "file": {
+                    const meta = jsonData.json.files[UUID];
+                    if (meta) {
+                        this.propertys.file.name.value
+                        this.propertys.file.extension.value
+                        this.propertys.file.mediaType.value
+                        this.propertys.file.compressType.value
+                        this.propertys.file.bitRate.value
+                        this.propertys.file.samplingRate.value
+                        this.propertys.file.recordingMethod.value
+                        this.propertys.file.sampleRate.value
+                    }
+                    break;
+                }
+                case "album": {
+                    const meta = jsonData.json.albums[UUID];
+                    if (meta) {
+
+                    }
+                    break;
+                }
+                case "artist": {
+                    const meta = jsonData.json.artists[UUID];
+                    if (meta) {
+
+                    }
+                    break;
+                }
+                case "music": {
+                    const meta = jsonData.json.musics[UUID];
+                    if (meta) {
+
+                    }
+                    break;
+                }
+            }
+
+        }
+        call(type: "file" | "album" | "artist" | "music") {
+            // 画面切り替えコード
+
+            sideBarViewButtonControl.chenge(type + "setting");
+
+            // 画面切り替えコード
         }
     };
     (function test() {
